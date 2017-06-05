@@ -1,4 +1,4 @@
-# cim-robolego
+# CIM Project - Multiplayer Robolego game
 
 Adding LeJos -  
 In Eclipse, go to help - install new sofware -> select "EV3_HOME"  
