@@ -12,13 +12,10 @@ import lejos.nxt.comm.NXTConnection;
 import lejos.nxt.Motor;
 import java.io.IOException;
 
-import lejos.nxt.Button;
-import lejos.nxt.ButtonListener;
-import lejos.nxt.LCD;
-import lejos.nxt.comm.Bluetooth;
-import lejos.nxt.comm.NXTConnection;
+import java.io.*;
+import lejos.nxt.*;
+import lejos.nxt.comm.*;
 
-import lejos.nxt.Motor; // <--import motors lib
 
 public class Main {
 
@@ -61,15 +58,8 @@ public class Main {
 								e.printStackTrace();
 							}
 				        LCD.clear();
-				        // LCD.drawInt(n, 4, 4);
-						if(n == 102) // <--ASCII for F = 102
-						{
-						Motor.A.forward(); // <-- when pressing F, activate motor A in forward direction
-						}
-						if(n == 115) // <--ASCII FOR S = 115
-						{
-						Motor.A.stop(); // <-- when pressing S, activate motor A in backward direction
-						}
+				        //handle brick
+				        Mover.MoveBrick(n);
 				    }
 				     try {
 						dis.close();
