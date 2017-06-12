@@ -17,7 +17,7 @@ import lejos.nxt.*;
 import lejos.nxt.comm.*;
 
 
-public class Main {
+public class DTR_Main {
 
 	static boolean ready=true;
 	static NXTConnection btc;
@@ -57,9 +57,12 @@ public class Main {
 								// TODO Auto-generated catch block
 								e.printStackTrace();
 							}
-				        LCD.clear();
+						LCD.drawString("Detected: " + n,0,0);
 				        //handle brick
-				        Mover.MoveBrick(n);
+						if(n!=-1){
+					        Mover.MoveBrick(n);
+					        n=-1;
+						}
 				    }
 				     try {
 						dis.close();
@@ -73,5 +76,6 @@ public class Main {
 				 btc.close();
 				 LCD.clear();
 			}
+	
 
 }
