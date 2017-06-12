@@ -9,19 +9,36 @@ public class Mover {
 		
 		long millis = System.currentTimeMillis();
 		
-		while(System.currentTimeMillis()<(millis+TIME)){
-			if(n == 102) // <--ASCII for F = 102
-			{	
-				Motor.A.forward();
-				Motor.B.forward();
-			}
-			if(n == 115) // <--ASCII FOR S = 115
-			{
-			Motor.A.stop();
-			}		
+		switch(n){
+		case(102):
+			Forward();
+			break;
+		case(115):
+			Backward();
+			break;
 		}
+	}
+	
+	public static void Forward(){
+		long millis = System.currentTimeMillis();
+		while(System.currentTimeMillis()<(millis+TIME)){
+			Motor.A.forward();
+			Motor.B.forward();
+		}
+		stop();
+	}
+	
+	public static void Backward(){
+		long millis = System.currentTimeMillis();
+		while(System.currentTimeMillis()<(millis+TIME)){
+			Motor.A.backward();
+			Motor.B.backward();
+		}
+		stop();
+	}
+	
+	public static void stop(){
 		Motor.A.stop();
 		Motor.B.stop();
-	
 	}
 }
