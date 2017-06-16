@@ -21,11 +21,13 @@ public class DTR_Main {
 
 	static boolean ready=true;
 	static NXTConnection btc;
+
 	private static void goOut(){
 		ready=false;
 	}
 	public static void main(String[] args)throws Exception {
 		//Listener for the Enter button.
+		
 		Button.ENTER.addButtonListener(new ButtonListener() {
 		      public void buttonPressed(Button b) {
 		        LCD.drawString("ENTER pressed", 0, 0);
